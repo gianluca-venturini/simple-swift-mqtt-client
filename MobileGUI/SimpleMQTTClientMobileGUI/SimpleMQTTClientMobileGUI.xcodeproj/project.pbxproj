@@ -13,6 +13,7 @@
 		9993E1741A634EA200FA5954 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9993E1731A634EA200FA5954 /* Images.xcassets */; };
 		9993E1771A634EA200FA5954 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9993E1751A634EA200FA5954 /* LaunchScreen.xib */; };
 		9993E1831A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993E1821A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.swift */; };
+		999F53401A6D7D5C00E6E086 /* SimpleMQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999F533F1A6D7D5C00E6E086 /* SimpleMQTTClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		9993E17C1A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMQTTClientMobileGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9993E1811A634EA200FA5954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9993E1821A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMQTTClientMobileGUITests.swift; sourceTree = "<group>"; };
+		999F533F1A6D7D5C00E6E086 /* SimpleMQTTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleMQTTClient.framework; path = "../../DerivedData/Build/Products/Debug-iphonesimulator/SimpleMQTTClient.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				999F53401A6D7D5C00E6E086 /* SimpleMQTTClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		9993E15E1A634EA200FA5954 = {
 			isa = PBXGroup;
 			children = (
+				999F533F1A6D7D5C00E6E086 /* SimpleMQTTClient.framework */,
 				9993E1691A634EA200FA5954 /* SimpleMQTTClientMobileGUI */,
 				9993E17F1A634EA200FA5954 /* SimpleMQTTClientMobileGUITests */,
 				9993E1681A634EA200FA5954 /* Products */,
@@ -161,6 +165,7 @@
 				TargetAttributes = {
 					9993E1661A634EA200FA5954 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = F554V774C5;
 					};
 					9993E17B1A634EA200FA5954 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -338,6 +343,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphonesimulator",
+				);
 				INFOPLIST_FILE = SimpleMQTTClientMobileGUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +358,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphonesimulator",
+				);
 				INFOPLIST_FILE = SimpleMQTTClientMobileGUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,6 +422,7 @@
 				9993E1881A634EA200FA5954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9993E1891A634EA200FA5954 /* Build configuration list for PBXNativeTarget "SimpleMQTTClientMobileGUITests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +431,7 @@
 				9993E18B1A634EA200FA5954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

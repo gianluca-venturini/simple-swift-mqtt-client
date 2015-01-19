@@ -135,6 +135,17 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         return channels
     }
     
+    // Return if is subscribeb or no to a channel, takes into account wildcards
+    public func isSubscribed(channel: String) -> Bool {
+        for (c, subscribed) in subscribedChannels {
+            if subscribed && c.substringToIndex(c.endIndex.predecessor()).isSubinitialStringOf(channel) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     public func publish(channel: String, message: String) {
         while !sessionConnected && !sessionError {
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 1))

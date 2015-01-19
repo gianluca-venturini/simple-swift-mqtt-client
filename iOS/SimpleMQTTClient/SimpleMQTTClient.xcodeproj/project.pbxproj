@@ -10,22 +10,23 @@
 		991DBE1B1A6353D300C084C5 /* SimpleMQTTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 991DBE1A1A6353D300C084C5 /* SimpleMQTTClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		991DBE211A6353D300C084C5 /* SimpleMQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991DBE151A6353D300C084C5 /* SimpleMQTTClient.framework */; };
 		991DBE281A6353D300C084C5 /* SimpleMQTTClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991DBE271A6353D300C084C5 /* SimpleMQTTClientTests.swift */; };
-		99E2980D1A635A29006F0EB7 /* MQTTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E297FD1A635A29006F0EB7 /* MQTTClient.h */; };
-		99E2980E1A635A29006F0EB7 /* MQTTDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E297FE1A635A29006F0EB7 /* MQTTDecoder.h */; };
+		99561AC61A6D781200A47734 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99561AC51A6D781200A47734 /* Foundation.framework */; };
+		99E2980D1A635A29006F0EB7 /* MQTTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E297FD1A635A29006F0EB7 /* MQTTClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99E2980E1A635A29006F0EB7 /* MQTTDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E297FE1A635A29006F0EB7 /* MQTTDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99E2980F1A635A29006F0EB7 /* MQTTDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E297FF1A635A29006F0EB7 /* MQTTDecoder.m */; };
-		99E298101A635A29006F0EB7 /* MQTTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298001A635A29006F0EB7 /* MQTTEncoder.h */; };
+		99E298101A635A29006F0EB7 /* MQTTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298001A635A29006F0EB7 /* MQTTEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99E298111A635A29006F0EB7 /* MQTTEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E298011A635A29006F0EB7 /* MQTTEncoder.m */; };
-		99E298121A635A29006F0EB7 /* MQTTMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298021A635A29006F0EB7 /* MQTTMessage.h */; };
+		99E298121A635A29006F0EB7 /* MQTTMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298021A635A29006F0EB7 /* MQTTMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99E298131A635A29006F0EB7 /* MQTTMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E298031A635A29006F0EB7 /* MQTTMessage.m */; };
-		99E298141A635A29006F0EB7 /* MQTTSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298041A635A29006F0EB7 /* MQTTSession.h */; };
+		99E298141A635A29006F0EB7 /* MQTTSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298041A635A29006F0EB7 /* MQTTSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99E298151A635A29006F0EB7 /* MQTTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E298051A635A29006F0EB7 /* MQTTSession.m */; };
-		99E298161A635A29006F0EB7 /* MQTTSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298061A635A29006F0EB7 /* MQTTSessionManager.h */; };
-		99E298171A635A29006F0EB7 /* MQTTSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E298071A635A29006F0EB7 /* MQTTSessionManager.m */; };
-		99E298181A635A29006F0EB7 /* MQTTTxFlow.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298081A635A29006F0EB7 /* MQTTTxFlow.h */; };
+		99E298161A635A29006F0EB7 /* MQTTSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298061A635A29006F0EB7 /* MQTTSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99E298181A635A29006F0EB7 /* MQTTTxFlow.h in Headers */ = {isa = PBXBuildFile; fileRef = 99E298081A635A29006F0EB7 /* MQTTTxFlow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99E298191A635A29006F0EB7 /* MQTTTxFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E298091A635A29006F0EB7 /* MQTTTxFlow.m */; };
 		99E2981A1A635A29006F0EB7 /* SimpleMQTTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2980A1A635A29006F0EB7 /* SimpleMQTTClient.swift */; };
 		99E2981B1A635A29006F0EB7 /* SimpleMQTTClientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2980B1A635A29006F0EB7 /* SimpleMQTTClientDelegate.swift */; };
 		99E2981C1A635A29006F0EB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E2980C1A635A29006F0EB7 /* String.swift */; };
+		99F8AA3D1A6D76B0003ECE44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F8AA3C1A6D76B0003ECE44 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		991DBE201A6353D300C084C5 /* SimpleMQTTClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMQTTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		991DBE261A6353D300C084C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		991DBE271A6353D300C084C5 /* SimpleMQTTClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMQTTClientTests.swift; sourceTree = "<group>"; };
+		99561AC51A6D781200A47734 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99E297FD1A635A29006F0EB7 /* MQTTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MQTTClient.h; path = ../../Common/MQTTClient.h; sourceTree = "<group>"; };
 		99E297FE1A635A29006F0EB7 /* MQTTDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MQTTDecoder.h; path = ../../Common/MQTTDecoder.h; sourceTree = "<group>"; };
 		99E297FF1A635A29006F0EB7 /* MQTTDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MQTTDecoder.m; path = ../../Common/MQTTDecoder.m; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		99E2980A1A635A29006F0EB7 /* SimpleMQTTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleMQTTClient.swift; path = ../../Common/SimpleMQTTClient.swift; sourceTree = "<group>"; };
 		99E2980B1A635A29006F0EB7 /* SimpleMQTTClientDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleMQTTClientDelegate.swift; path = ../../Common/SimpleMQTTClientDelegate.swift; sourceTree = "<group>"; };
 		99E2980C1A635A29006F0EB7 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../../Common/String.swift; sourceTree = "<group>"; };
+		99F8AA3C1A6D76B0003ECE44 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99561AC61A6D781200A47734 /* Foundation.framework in Frameworks */,
+				99F8AA3D1A6D76B0003ECE44 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 		991DBE0B1A6353D300C084C5 = {
 			isa = PBXGroup;
 			children = (
+				99561AC51A6D781200A47734 /* Foundation.framework */,
+				99F8AA3C1A6D76B0003ECE44 /* UIKit.framework */,
 				99E297FC1A635A1F006F0EB7 /* Common */,
 				991DBE171A6353D300C084C5 /* SimpleMQTTClient */,
 				991DBE241A6353D300C084C5 /* SimpleMQTTClientTests */,
@@ -165,7 +172,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99E298161A635A29006F0EB7 /* MQTTSessionManager.h in Headers */,
 				991DBE1B1A6353D300C084C5 /* SimpleMQTTClient.h in Headers */,
 				99E298101A635A29006F0EB7 /* MQTTEncoder.h in Headers */,
 				99E2980D1A635A29006F0EB7 /* MQTTClient.h in Headers */,
@@ -173,6 +179,7 @@
 				99E298121A635A29006F0EB7 /* MQTTMessage.h in Headers */,
 				99E2980E1A635A29006F0EB7 /* MQTTDecoder.h in Headers */,
 				99E298141A635A29006F0EB7 /* MQTTSession.h in Headers */,
+				99E298161A635A29006F0EB7 /* MQTTSessionManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +233,7 @@
 				TargetAttributes = {
 					991DBE141A6353D300C084C5 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = F554V774C5;
 					};
 					991DBE1F1A6353D300C084C5 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -274,7 +282,6 @@
 			files = (
 				99E298131A635A29006F0EB7 /* MQTTMessage.m in Sources */,
 				99E298111A635A29006F0EB7 /* MQTTEncoder.m in Sources */,
-				99E298171A635A29006F0EB7 /* MQTTSessionManager.m in Sources */,
 				99E2981C1A635A29006F0EB7 /* String.swift in Sources */,
 				99E2981B1A635A29006F0EB7 /* SimpleMQTTClientDelegate.swift in Sources */,
 				99E298151A635A29006F0EB7 /* MQTTSession.m in Sources */,
@@ -391,6 +398,7 @@
 		991DBE2C1A6353D300C084C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -406,6 +414,7 @@
 		991DBE2D1A6353D300C084C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -424,6 +433,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphonesimulator",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -441,6 +451,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphonesimulator",
 				);
 				INFOPLIST_FILE = SimpleMQTTClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

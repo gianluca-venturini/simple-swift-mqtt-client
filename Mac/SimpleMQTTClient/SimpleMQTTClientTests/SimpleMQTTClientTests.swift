@@ -71,6 +71,37 @@ class SimpleMQTTClientTests: XCTestCase, SimpleMQTTClientDelegate {
         XCTAssert(contains(channels, "channel5"), "Pass")
     }
     
+    func testSubscribeAsyncWildcard() {
+        mqtt.delegate = self
+        mqtt.synchronous = false
+        mqtt.subscribe("test/#")
+        mqtt.publish("test/channel", message: "Test message")
+        
+        expectation = expectationWithDescription("Message back")
+        
+        waitForExpectationsWithTimeout(5, handler: nil)
+    }
+    
+    func testSubscribeSyncWildcard() {
+        mqtt.delegate = self
+        mqtt.synchronous = true
+        mqtt.subscribe("test/#")
+        mqtt.publish("test/channel", message: "Test message")
+        
+        expectation = expectationWithDescription("Message back")
+        
+        waitForExpectationsWithTimeout(5, handler: nil)
+        XCTAssert(mqtt.isSubscribed("test/test1"), "Pass")
+        XCTAssert(mqtt.isSubscribed("test/test2"), "Pass")
+        XCTAssert(mqtt.isSubscribed("test/test3"), "Pass")
+        XCTAssert(mqtt.isSubscribed("test/test4"), "Pass")
+        XCTAssert(mqtt.isSubscribed("test/u39567234786iutyerghdhg"), "Pass")
+        XCTAssert(mqtt.isSubscribed("test/sjghsdfgkjkshfkjfdshgsjgskgjhfdsjkhsdjkhdgfksjg"), "Pass")
+        XCTAssert(mqtt.isSubscribed("test/"), "Pass")
+        XCTAssert(!mqtt.isSubscribed("otherchannel/"), "Pass")
+        XCTAssert(!mqtt.isSubscribed("otherchannel/test/test1"), "Pass")
+    }
+    
     func testUnsubscribeSync() {
         mqtt.synchronous = true
         mqtt.subscribe("channel1")
