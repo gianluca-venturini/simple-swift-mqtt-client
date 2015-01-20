@@ -90,6 +90,11 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         connect(host)
     }
     
+    /**
+        Subscribe to an MQTT channel
+    
+        :param: channel The name of the channel
+    */
     public func subscribe(channel: String) {
         while !sessionConnected && !sessionError {
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 1))
