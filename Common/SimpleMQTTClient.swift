@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+    This class provide a simple interface that let you use the MQTT protocol
+*/
 public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
     
     // Options
@@ -27,7 +30,12 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
     // Delegate
     public weak var delegate: SimpleMQTTClientDelegate?
     
-    // Delegate initializer
+    /** 
+        Delegate initializer.
+    
+        :param: synchronous If true the client is synchronous, otherwise all the functions will return immediately without waiting for acks.
+        :param: clientId The client id used internally by the protocol. You need to have a good reason for set this, otherwise it is better to let the function generate it for you.
+    */
     public init(synchronous: Bool, clientId optionalClientId: String? = nil) {
         
         self.synchronous = synchronous
@@ -83,17 +91,23 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         session.delegate = self;
     }
     
-    // Convenience initializers
+    /** 
+        Convenience initializers. It inizialize the client and connect to a server
     
+        :param: host The hostname.
+        :param: synchronous If synchronous or not
+        :param: clientId An optional client id, you need to have a good reason for setting this, otherwise let the system generate it for you.
+    
+    */
     public convenience init(host: String, synchronous: Bool, clientId optionalClientId: String? = nil) {
         self.init(synchronous: synchronous, clientId: optionalClientId)
         connect(host)
     }
     
     /**
-        Subscribe to an MQTT channel
+        Subscribe to an MQTT channel.
     
-        :param: channel The name of the channel
+        :param: channel The name of the channel.
     */
     public func subscribe(channel: String) {
         while !sessionConnected && !sessionError {
@@ -114,6 +128,11 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         
     }
     
+    /**
+        Unsubscribe from an MQTT channel.
+    
+        :param: channel The name of the channel.
+    */
     public func unsubscribe(channel: String) {
         if(synchronous) {
             if let entry = subscribedChannels[channel] {
@@ -130,6 +149,11 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         }
     }
     
+    /**
+        Return an array of channels, it contains also the wildcards.
+    
+        :returns: Array of strings, every sstring is a channel subscribed.
+    */
     public func getSubscribedChannels() -> [String] {
         var channels:[String] = []
         for (channel, subscribed) in subscribedChannels {
@@ -140,7 +164,12 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         return channels
     }
     
-    // Return if is subscribeb or no to a channel, takes into account wildcards
+    /** 
+        Return true if is subscribeb or no to a channel, takes into account wildcards.
+    
+        :param: channel Channel name.
+        :returns: true if is is subscribed to the channel.
+    */
     public func isSubscribed(channel: String) -> Bool {
         for (c, subscribed) in subscribedChannels {
             if subscribed && c.substringToIndex(c.endIndex.predecessor()).isSubinitialStringOf(channel) {
@@ -151,6 +180,12 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         return false
     }
     
+    /**
+        Publish a message on the desired MQTT channel.
+    
+        :param: channel The name of the channel.
+        :param: message The message.
+    */
     public func publish(channel: String, message: String) {
         while !sessionConnected && !sessionError {
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 1))
@@ -169,13 +204,20 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
                 qos: MQTTQosLevel.QoSLevelAtMostOnce)
         }
     }
-        
     
+    /**
+        Disconnect the client immediately.
+    */
     public func disconnect() {
         session.close()
         sessionConnected = false
     }
     
+    /**
+        Connect the client to an MQTT server.
+    
+        :param: host The hostname of the server.
+    */
     public func connect(host: String) {
         if( sessionConnected == false) {
             subscribedChannels = [:]
@@ -194,7 +236,7 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         
     }
     
-    // MQTTSessionDelegate protocol
+// MARK:  MQTTSessionDelegate protocol
     
     public func newMessage(session: MQTTSession!, data: NSData!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
         println("New message received \(NSString(data: data, encoding: NSUTF8StringEncoding))")

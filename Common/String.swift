@@ -13,7 +13,7 @@ extension String {
         return String(Array(self)[i])
     }
     
-    // Chack if the passed string contains the actual string (starting from the beginning
+    // Chack if the passed string contains the actual string (starting from the beginning)
     func isSubinitialStringOf(string: String) -> Bool {
         var s1 = Array(self)
         var s2 = Array(string)
