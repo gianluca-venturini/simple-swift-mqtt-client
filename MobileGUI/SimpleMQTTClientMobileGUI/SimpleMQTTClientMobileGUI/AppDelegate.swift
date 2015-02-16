@@ -10,7 +10,7 @@ import UIKit
 import SimpleMQTTClient
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SimpleMQTTClientDelegate {
 
     var window: UIWindow?
     
@@ -19,9 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        mqtt = SimpleMQTTClient(host: "127.0.0.1", synchronous: true)
+        mqtt = SimpleMQTTClient(host: "ltg.evl.uic.edu", synchronous: true)
         mqtt?.publish("test", message: "MQTT message from ios application")
+        mqtt?.delegate = self
+        mqtt?.subscribe("test")
         return true
+    }
+    
+    func messageReceived(channel: String, message: String) {
+        println("Channel: " + channel + " Message: " + message)
     }
 
     func applicationWillResignActive(application: UIApplication) {

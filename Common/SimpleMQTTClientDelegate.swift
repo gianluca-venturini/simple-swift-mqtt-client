@@ -27,7 +27,7 @@ import Foundation
     optional func disconnected()
     
     /**
-        Called when the client will be sconnected.
+        Called when the client will be connected.
     */
     optional func connected()
 }

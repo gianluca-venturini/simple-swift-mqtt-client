@@ -27,6 +27,9 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
     var sessionConnected = false
     var sessionError = false
     
+    // Server hostname
+    var host: String? = nil
+    
     // Delegate
     public weak var delegate: SimpleMQTTClientDelegate?
     
@@ -181,6 +184,22 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
     }
     
     /**
+        Return the wildcard that contains the current channel if there's any
+        
+        :param: channel Channel name.
+        :returns: the String of the wildcard
+    */
+    public func wildcardSubscribed(channel: String) -> String? {
+        for (c, subscribed) in subscribedChannels {
+            if subscribed && c.substringToIndex(c.endIndex.predecessor()).isSubinitialStringOf(channel) {
+                return c
+            }
+        }
+        
+        return nil
+    }
+    
+    /**
         Publish a message on the desired MQTT channel.
     
         :param: channel The name of the channel.
@@ -209,6 +228,8 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         Disconnect the client immediately.
     */
     public func disconnect() {
+        self.host = nil
+        
         session.close()
         sessionConnected = false
     }
@@ -219,6 +240,8 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         :param: host The hostname of the server.
     */
     public func connect(host: String) {
+        self.host = host
+        
         if( sessionConnected == false) {
             subscribedChannels = [:]
             if(synchronous) {
@@ -236,6 +259,53 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         
     }
     
+    var previouslySubscribedChannels: [String:Bool]?
+    
+    /**
+        Reconnect the client to the MQTT server.
+    */
+    public func reconnect() {
+        
+        // Only if the session was previously connected
+        if(sessionConnected == true) {
+            
+            // Save the previous subscribed channels
+            if self.previouslySubscribedChannels == nil {
+                self.previouslySubscribedChannels = self.subscribedChannels
+            }
+
+            self.subscribedChannels = [:]
+            
+            if(synchronous) {
+                session.connectAndWaitToHost(host,
+                    port: 1883,
+                    usingSSL: false)
+                
+                if let psc = self.previouslySubscribedChannels {
+                    for (channel, status) in psc {
+                        if(status == true) {
+                            self.subscribe(channel)
+                        }
+                    }
+                }
+            }
+            else {
+                session.connectToHost(host,
+                    port: 1883,
+                    usingSSL: false)
+                
+                // TODO: resubmit to every channel
+            }
+        }
+    }
+    
+    /**
+        Timer callback 1.0 seconds after the disconnection
+    */
+    public func reconnect(timer: NSTimer) {
+        self.reconnect()
+    }
+    
 // MARK:  MQTTSessionDelegate protocol
     
     public func newMessage(session: MQTTSession!, data: NSData!, onTopic topic: String!, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
@@ -250,10 +320,13 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
         switch eventCode {
             case .Connected:
                 sessionConnected = true
+                self.previouslySubscribedChannels = nil     // Delete the channels in the previous session
                 self.delegate?.connected?()
             case .ConnectionClosed:
-                sessionConnected = false
-                self.delegate?.disconnected?()
+                println("SimpleMQTTClient: Connection closed, retry to re-connect in 1 second")
+                NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "reconnect:", userInfo: nil, repeats: false)
+                //sessionConnected = false
+                //self.delegate?.disconnected?()
             default:
                 sessionError = true
         }

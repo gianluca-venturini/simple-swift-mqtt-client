@@ -18,15 +18,24 @@ extension String {
         var s1 = Array(self)
         var s2 = Array(string)
         
+        if(s1.count == 0) {
+            return true
+        }
+        
         if(s1.count > s2.count) {
             return false
         }
         
-        for i in 0...min(s1.count,s2.count)-1 {
-            if(s1[i] != s2[i]) {
-                return false
+        if min(s1.count, s2.count)-1 >= 0 {
+            for i in 0...min(s1.count,s2.count)-1 {
+                if(s1[i] != s2[i]) {
+                    return false
+                }
             }
+            return true
         }
-        return true
+        else {
+            return false
+        }
     }
 }
