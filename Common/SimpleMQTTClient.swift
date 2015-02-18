@@ -85,7 +85,7 @@ public class SimpleMQTTClient: NSObject, MQTTSessionDelegate {
                 forMode: nil
             )
         }
-        
+                
         self.subscribedChannels = [:]
         self.subscribedChannelMessageIds = [:]
         self.unsubscribedChannelMessageIds = [:]

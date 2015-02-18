@@ -13,8 +13,8 @@
 		9993E1741A634EA200FA5954 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9993E1731A634EA200FA5954 /* Images.xcassets */; };
 		9993E1771A634EA200FA5954 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9993E1751A634EA200FA5954 /* LaunchScreen.xib */; };
 		9993E1831A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993E1821A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.swift */; };
-		99C347861A929FBD0091D467 /* SimpleMQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C347851A929FBD0091D467 /* SimpleMQTTClient.framework */; };
-		99C347881A92A0120091D467 /* SimpleMQTTClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99C347851A929FBD0091D467 /* SimpleMQTTClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99C368CD1A93B59E001A1292 /* SimpleMQTTClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99C368CA1A93B4E5001A1292 /* SimpleMQTTClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99C368CE1A93B5A2001A1292 /* SimpleMQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C368CA1A93B4E5001A1292 /* SimpleMQTTClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				99C347881A92A0120091D467 /* SimpleMQTTClient.framework in Embed Frameworks */,
+				99C368CD1A93B59E001A1292 /* SimpleMQTTClient.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,7 +52,7 @@
 		9993E17C1A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMQTTClientMobileGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9993E1811A634EA200FA5954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9993E1821A634EA200FA5954 /* SimpleMQTTClientMobileGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMQTTClientMobileGUITests.swift; sourceTree = "<group>"; };
-		99C347851A929FBD0091D467 /* SimpleMQTTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleMQTTClient.framework; path = "../../DerivedData/Build/Products/Release-iphoneos/SimpleMQTTClient.framework"; sourceTree = "<group>"; };
+		99C368CA1A93B4E5001A1292 /* SimpleMQTTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimpleMQTTClient.framework; path = "../../DerivedData/Build/Products/Debug-iphoneos/SimpleMQTTClient.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C347861A929FBD0091D467 /* SimpleMQTTClient.framework in Frameworks */,
+				99C368CE1A93B5A2001A1292 /* SimpleMQTTClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 		9993E15E1A634EA200FA5954 = {
 			isa = PBXGroup;
 			children = (
-				99C347851A929FBD0091D467 /* SimpleMQTTClient.framework */,
+				99C368CA1A93B4E5001A1292 /* SimpleMQTTClient.framework */,
 				9993E1691A634EA200FA5954 /* SimpleMQTTClientMobileGUI */,
 				9993E17F1A634EA200FA5954 /* SimpleMQTTClientMobileGUITests */,
 				9993E1681A634EA200FA5954 /* Products */,
@@ -364,6 +364,7 @@
 					"$(inherited)",
 					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphonesimulator",
 					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Release-iphoneos",
+					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SimpleMQTTClientMobileGUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -380,6 +381,7 @@
 					"$(inherited)",
 					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphonesimulator",
 					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Release-iphoneos",
+					"/Users/gianluca/Developer/simple-swift-mqtt-client/DerivedData/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = SimpleMQTTClientMobileGUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

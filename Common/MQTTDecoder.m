@@ -131,9 +131,10 @@
                                                        data:self.dataBuffer];
                     if (DEBUGDEC) NSLog(@"%@ received (%lu)=%@...", self, (unsigned long)self.dataBuffer.length,
                           [self.dataBuffer subdataWithRange:NSMakeRange(0, MIN(16, self.dataBuffer.length))]);
-                    [self.delegate decoder:self newMessage:msg];
                     self.dataBuffer = NULL;
                     self.status = MQTTDecoderStatusDecodingHeader;
+                    [self.delegate decoder:self newMessage:msg];
+                    
                 }
             }
             break;

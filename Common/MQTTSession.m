@@ -61,7 +61,7 @@
 #define DUPLOOP 5
 
 #ifdef DEBUG
-#define DEBUGSESS FALSE
+#define DEBUGSESS TRUE
 #else
 #define DEBUGSESS FALSE
 #endif

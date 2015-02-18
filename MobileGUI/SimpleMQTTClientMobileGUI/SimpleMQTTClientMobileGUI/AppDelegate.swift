@@ -20,9 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SimpleMQTTClientDelegate 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         mqtt = SimpleMQTTClient(host: "ltg.evl.uic.edu", synchronous: true)
+        mqtt?.subscribe("test")
+        mqtt?.publish("test", message: "MQTT message from ios application")
+        mqtt?.unsubscribe("test")
+        mqtt?.subscribe("test")
         mqtt?.publish("test", message: "MQTT message from ios application")
         mqtt?.delegate = self
-        mqtt?.subscribe("test")
+        
         return true
     }
     
